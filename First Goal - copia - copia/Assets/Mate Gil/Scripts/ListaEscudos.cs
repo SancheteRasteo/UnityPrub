@@ -37,30 +37,28 @@ public class ListaEscudos : MonoBehaviour
 
             case 2:          // B Nacional
 
-                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos1[numEquipo];
+                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos2[numEquipo];
                 break;
 
             case 3:          // B Metro
 
-                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos1[numEquipo];
+                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos3[numEquipo];
                 break;
 
             case 4:          // Federal A
 
-                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos1[numEquipo];
+                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos4[numEquipo];
                 break;
 
             case 5:          // Primera C
 
-                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos1[numEquipo];
+                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos5[numEquipo];
                 break;
 
             case 6:          // Primera D
 
-                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos1[numEquipo];
+                GameObject.FindGameObjectWithTag(SideTag).GetComponent<MeshRenderer>().material = Escudos6[numEquipo];
                 break;
         }
-
-
     }
 }

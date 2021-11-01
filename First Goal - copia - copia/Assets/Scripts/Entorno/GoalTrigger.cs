@@ -21,13 +21,6 @@ public class GoalTrigger : MonoBehaviour
     Turnacion TurnForGoals;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //PosBall = GameObject.FindGameObjectWithTag("Pelota").GetComponent<Transform>().position;
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Pelota")
@@ -63,45 +56,36 @@ public class GoalTrigger : MonoBehaviour
 
                     IEnumerator Ending()
                     {
-                        while (contFinal <= 5)
+                        while (contFinal <= 3)
                         {
                             yield return new WaitForSeconds(0.001f);
 
                             contFinal += 0.001f;
                         }
-                    }
 
-                    SceneManager.LoadScene("Menu");
+                        SceneManager.LoadScene("Menu");
+                    }
                 }
-
-                TurnForGoals.Goal_t = Goal_gt;
-
-                Goal_gt = 0;
-
-
-                StartCoroutine(PausaGol());
-
-                IEnumerator PausaGol()
+                else
                 {
-                    yield return new WaitForSeconds(3);
+                    TurnForGoals.Goal_t = Goal_gt;
+                    Goal_gt = 0;
 
-                    if (pases)
+                    StartCoroutine(PausaGol());
+
+                    IEnumerator PausaGol()
                     {
-                        FindObjectOfType<PasesPelota>().GoalPP = false;
+                        yield return new WaitForSeconds(3);
+
+                        if (pases)
+                        {
+                            FindObjectOfType<PasesPelota>().GoalPP = false;
+                        }
+
+                        TurnForGoals.ReiniciarRutina();
+
+                        reboot = true;
                     }
-
-                    TurnForGoals.ReiniciarRutina();
-
-                    /*foreach (ClickMove gt in FindObjectsOfType<ClickMove>())
-                    {
-                        gt.Reposicion();
-                    }*/
-
-                    //other.GetComponent<Transform>().position = PosBall;
-                    //other.GetComponent<Rigidbody>().Sleep();
-                    //other.GetComponent<Rigidbody>().WakeUp();
-
-                    reboot = true;
                 }
             }
         }

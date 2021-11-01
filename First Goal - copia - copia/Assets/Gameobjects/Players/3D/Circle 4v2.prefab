@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1336358744380602532}
   m_Layer: 0
   m_Name: Circle 4v2
-  m_TagString: Local
+  m_TagString: Rival
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336358744380602542}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 3, z: -0.31}
+  m_LocalPosition: {x: 3, y: 0, z: -0.31}
   m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab79a9230c58bf40862aa1594789938, type: 2}
+  - {fileID: 2100000, guid: cdb10884ae341b84cab452578e7599fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Indicador: {fileID: 7742856575775751205, guid: 44ac5f20e2c896a469fa38acba1dc7f5, type: 3}
   Turno: 0
-  id: 0
+  haschanged: 0
+  NoGoal: 1
+  id: 12
   Speed: 150
   turn: {fileID: 3081527051382884188, guid: d789e3684d4f3174d9aa81b1f5bf9687, type: 3}
   Flecha: {fileID: 2170288657780881694, guid: 418136c902f5aaa4d9653728782f2e56, type: 3}

@@ -48,21 +48,12 @@ public class Turnacion : MonoBehaviour
     GameObject TechoRight;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        //Keep_Music.Instance.gameObject.SetActive(false);
-
-        /*foreach(GameObject ini in Players)
-        {
-            Instantiate(ini.gameObject, ini.transform.position, Quaternion.identity);
-        }*/
-
         Ballt = GameObject.FindGameObjectWithTag("Pelota");
         PosBall = Ballt.GetComponent<Transform>().position;
 
         BarraImage.color = new Color(0, 255, 0);
-
 
         int Starto = UnityEngine.Random.Range(0, 2);
 
@@ -74,29 +65,34 @@ public class Turnacion : MonoBehaviour
         {
             EmpiezaEste = "Rival";
         }
-
-        int contL = 0;
-        int contR = 6;
-
-        foreach (ClickMove tt_id in FindObjectsOfType<ClickMove>())
-        {
-            if (tt_id.tag == "Local")
-            {
-                contL++;
-
-                tt_id.id = contL;
-            }
-            else
-            {
-                contR++;
-
-                tt_id.id = contR;
-            }
-        }
-
-        StartCoroutine(Turnometro());
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Keep_Music.Instance.gameObject.SetActive(false);
+
+        //int contL = 0;
+        //int contR = 6;
+
+        //foreach (ClickMove tt_id in FindObjectsOfType<ClickMove>())
+        //{
+        //    if (tt_id.tag == "Local")
+        //    {
+        //        contL++;
+
+        //        tt_id.id = contL;
+        //    }
+        //    else
+        //    {
+        //        contR++;
+
+        //        tt_id.id = contR;
+        //    }
+        //}
+
+        //StartCoroutine(Turnometro());
+    }
 
     IEnumerator Turnometro()
     {
@@ -419,5 +415,4 @@ public class Turnacion : MonoBehaviour
     {
         StopCoroutine(Turnometro());
     }
-    //Libreria util using Unity.Mathematics;
 }

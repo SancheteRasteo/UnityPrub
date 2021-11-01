@@ -30,8 +30,8 @@ public class ClickMove : MonoBehaviour
     bool SeFrenoP;
     public bool NoGoal = true;
     bool exhibicion = false;
+    bool CambioBall = false;
 
-    int contPosition = 0;
     public int id = 0;
 
     float limitShot = 4.5F;
@@ -39,6 +39,7 @@ public class ClickMove : MonoBehaviour
     float X;
     float RadioObjeto;
     float TiroAngle;
+    const float FrameTime = 0.0192f;
 
     [SerializeField]
     float Speed;
@@ -55,76 +56,69 @@ public class ClickMove : MonoBehaviour
     [SerializeField]
     Flechazo FlechaScript;
 
-
-    void Start()
+    private void Awake()
     {
-        //Y si se puede, dividir los scripts (Chupala, solo si lo pide el chino)
-
         Ballcm = GameObject.FindGameObjectWithTag("Pelota");
 
         InicialPos = this.transform.position;
         InicialRot = this.transform.rotation;
 
         RadioObjeto = this.transform.lossyScale.y / 2;
+
+        turn = FindObjectOfType<Turnacion>();
+        MainCamera = FindObjectOfType<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (haschanged && NoGoal)
+        if (haschanged && !NoGoal)
         {
-            if (contPosition == 12)
-            {
-                contPosition = 0;
-
-                if (Mathf.Clamp(this.transform.position.x - PlayerTransform.x, -0.005f, 0.005f) == this.transform.position.x - PlayerTransform.x
-                    && Mathf.Clamp(this.transform.position.y - PlayerTransform.y, -0.005f, 0.005f) == this.transform.position.y - PlayerTransform.y || SeFrenoP)
-                {
-                    SeFrenoP = true;
-
-                    if (Mathf.Clamp(Ballcm.transform.position.x - PelotaTransform.x, -0.008f, 0.008f) == Ballcm.transform.position.x - PelotaTransform.x
-                        && Mathf.Clamp(Ballcm.transform.position.y - PelotaTransform.y, -0.008f, 0.008f) == Ballcm.transform.position.y - PelotaTransform.y)
-                    {
-                        haschanged = false;
-
-                        if (exhibicion)
-                        {
-                            FindObjectOfType<PasesPelota>().DestruirJoint();
-                        }
-
-                        turn.ReiniciarRutina();
-                        //print("Se freno " + this.name);
-                        //print(this.transform + " es igual a " + PlayerTransform);
-                    }
-                }
-            }
-            else if (contPosition == 0)
-            {
-                if (SeFrenoP)
-                {
-                    PelotaTransform = Ballcm.transform.position;
-                }
-                else
-                {
-                    PlayerTransform = this.transform.position;
-                }
-
-                contPosition++;
-            }
-            else
-            {
-                contPosition++;
-            }
-        }
-        else if (haschanged && !NoGoal)
-        {
-            contPosition = 0;
-
             haschanged = false;
-
             NoGoal = true;
         }
     }
+
+
+    IEnumerator Spectator()
+    {
+        while(haschanged && NoGoal)
+        {
+            if (SeFrenoP)
+            {
+                PelotaTransform = Ballcm.transform.position;
+
+                CambioBall = true;
+            }
+            else
+            {
+                PlayerTransform = this.transform.position;
+            }
+
+            yield return new WaitForSeconds(FrameTime);
+
+            if (Mathf.Clamp(this.transform.position.x - PlayerTransform.x, -0.005f, 0.005f) == this.transform.position.x - PlayerTransform.x
+                && Mathf.Clamp(this.transform.position.y - PlayerTransform.y, -0.005f, 0.005f) == this.transform.position.y - PlayerTransform.y || SeFrenoP)
+            {
+                SeFrenoP = true;
+
+                if (Mathf.Clamp(Ballcm.transform.position.x - PelotaTransform.x, -0.0085f, 0.0085f) == Ballcm.transform.position.x - PelotaTransform.x
+                    && Mathf.Clamp(Ballcm.transform.position.y - PelotaTransform.y, -0.0085f, 0.0085f) == Ballcm.transform.position.y - PelotaTransform.y && CambioBall)
+                {
+                    haschanged = false;
+
+                    if (exhibicion)
+                    {
+                        FindObjectOfType<PasesPelota>().DestruirJoint();
+                    }
+
+                    turn.ReiniciarRutina();
+                    //print("Se freno " + this.name);
+                    //print(this.transform + " es igual a " + PlayerTransform);
+                }
+            }
+        }
+    }
+
 
     private void OnMouseDown()
     {
@@ -193,9 +187,12 @@ public class ClickMove : MonoBehaviour
 
             Destroy(FlechaClone);            // # Para cuando tira y se debe frenar todo
 
-            haschanged = true;
             esteTiro = true;
             SeFrenoP = false;
+            CambioBall = false;
+            haschanged = true;
+
+            StartCoroutine(Spectator());
 
             if (exhibicion)
             {

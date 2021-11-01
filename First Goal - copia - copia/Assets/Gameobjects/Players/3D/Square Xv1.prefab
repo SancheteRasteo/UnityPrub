@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab79a9230c58bf40862aa1594789938, type: 2}
+  - {fileID: 2100000, guid: d6018c3c3cbc51946a0be6b1fb204f58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Indicador: {fileID: 3433732592261628554, guid: ff25bd23f3298144fa4f0fd44f778988, type: 3}
   Turno: 0
-  id: 0
+  haschanged: 0
+  NoGoal: 1
+  id: 5
   Speed: 130
   turn: {fileID: 3081527051382884188, guid: d789e3684d4f3174d9aa81b1f5bf9687, type: 3}
   Flecha: {fileID: 2170288657780881694, guid: 418136c902f5aaa4d9653728782f2e56, type: 3}

@@ -1052,15 +1052,15 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1519842389}
-  - {fileID: 1721332308}
   - {fileID: 1724089969}
-  - {fileID: 1695622055}
   - {fileID: 867155655}
-  - {fileID: 1612471441}
   - {fileID: 1226411655}
-  - {fileID: 802429153}
   - {fileID: 2128995404}
+  - {fileID: 1695622055}
+  - {fileID: 1721332308}
   - {fileID: 2131947012}
+  - {fileID: 1612471441}
+  - {fileID: 802429153}
   - {fileID: 1506650526}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1142,6 +1142,7 @@ GameObject:
   - component: {fileID: 571778344}
   - component: {fileID: 571778343}
   - component: {fileID: 571778342}
+  - component: {fileID: 571778345}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1214,6 +1215,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571778345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571778341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &588339301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1527,7 @@ RectTransform:
   m_Children:
   - {fileID: 1870976386}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1544,7 +1577,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 802429155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesLocal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-2-2-1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &802429155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,7 +1692,7 @@ RectTransform:
   m_Children:
   - {fileID: 1616461692}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1697,7 +1742,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867155657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesRival
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-4-1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &867155657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2366,7 +2423,7 @@ RectTransform:
   m_Children:
   - {fileID: 734804125}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2416,7 +2473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1226411657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesRival
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-1-4
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1226411657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2981,6 +3050,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: GuardarDatos
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: inicio
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1783776041}
         m_TargetAssemblyTypeName: salir, Assembly-CSharp
         m_MethodName: inicio
@@ -3113,7 +3194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1519842391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesRival
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-2-3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1519842391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3830,7 +3923,7 @@ RectTransform:
   m_Children:
   - {fileID: 259397564}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3880,7 +3973,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1612471443}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesLocal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-1-4
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1612471443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,7 +4411,7 @@ RectTransform:
   m_Children:
   - {fileID: 1499188348}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4357,6 +4462,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesLocal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-2-3
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1695622059}
         m_TargetAssemblyTypeName: erpocisionimgen, Assembly-CSharp
         m_MethodName: position
@@ -4453,7 +4570,7 @@ RectTransform:
   m_Children:
   - {fileID: 1570806199}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4504,21 +4621,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1721332312}
-        m_TargetAssemblyTypeName: erpocisionimgen, Assembly-CSharp
-        m_MethodName: position
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1783776042}
-        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
-        m_MethodName: saveFormacao
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesLocal
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4611,7 +4716,7 @@ RectTransform:
   m_Children:
   - {fileID: 372576585}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4662,6 +4767,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesRival
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-3-2
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: erpocisionimgen, Assembly-CSharp
         m_MethodName: position
@@ -4722,7 +4839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783776040}
   - component: {fileID: 1783776041}
-  - component: {fileID: 1783776042}
+  - component: {fileID: 1783776043}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4756,7 +4873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a49ad95c02127f4cb080542b1ff7675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1783776042
+--- !u!114 &1783776043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4765,7 +4882,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783776039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef60d98da7a563e4ab6bfbc298627925, type: 3}
+  m_Script: {fileID: 11500000, guid: 16ed26f076a67f540845a08400394cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1870976385
@@ -5150,7 +5267,7 @@ RectTransform:
   m_Children:
   - {fileID: 1638642709}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5200,7 +5317,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2128995406}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesRival
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-2-2-1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2128995406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5271,7 +5400,7 @@ RectTransform:
   m_Children:
   - {fileID: 1011191136}
   m_Father: {fileID: 559864633}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.40185177}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5321,7 +5450,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2131947014}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1783776043}
+        m_TargetAssemblyTypeName: InstanciasData, Assembly-CSharp
+        m_MethodName: FormacionesLocal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1-4-1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2131947014
 MonoBehaviour:
   m_ObjectHideFlags: 0
